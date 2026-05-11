@@ -1,75 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hamburguesas La Toña</title>
+<title>Hamburguesas la Toña</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
 body{
-background-color:#f8f9fa;
+padding-top:70px;
 }
 
 .hero{
-height:100vh;
-background-image:url('https://picsum.photos/1600/900');
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url('https://tiendacloud0jara.blob.core.windows.net/imagenesjaqueline/mike-PxJ9zkM2wdA-unsplash.jpg');
 background-size:cover;
 background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
 }
 
-.card img{
+.card-img-top{
 height:250px;
 object-fit:cover;
 }
 
-footer{
+.footer{
 background:#212529;
 color:white;
 padding:30px;
-text-align:center;
 margin-top:40px;
+text-align:center;
+}
+
+.footer a{
+color:#ffc107;
+text-decoration:none;
+}
+
+.social i{
+font-size:25px;
+margin:10px;
 }
 
 </style>
 
 </head>
 
-<body>
+<body class="bg-light">
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
+<!-- Barra de Navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
 <div class="container">
 
 <a class="navbar-brand" href="#">
-🍔 La Toña
+<img src="https://tiendacloud0jara.blob.core.windows.net/imagenesjaqueline/logo.JPG"
+alt="Logo"
+width="50"
+height="50"
+class="d-inline-block align-text-top">
 </a>
+
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+<ul class="navbar-nav me-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#productos">Hamburguesas</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contacto">Contacto</a>
+</li>
+
+</ul>
+
+<!-- Botón carrito -->
+<div class="d-flex">
+
+<button class="btn btn-outline-light me-2"
+data-bs-toggle="offcanvas"
+data-bs-target="#offcanvasCarrito">
+
+<i class="fas fa-shopping-cart"></i>
+
+<span class="badge bg-danger"
+id="contador-carrito">0</span>
+
+</button>
 
 </div>
 
+</div>
+</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero text-white text-center d-flex align-items-center justify-content-center">
 
-<div>
+<div class="container">
 
-<h1 class="display-3 fw-bold">
-Hamburguesas La Toña
+<h1 class="display-4">
+Encuentra la hamburguesa perfecta
 </h1>
 
 <p class="lead">
-Las mejores hamburguesas caseras
+Nuestras hamburguesas son elaboradas con los mejores ingredientes caseros.
 </p>
 
 <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAUO9E61UNldZRFlXMzlISk1UMjdVRU9OT1ROTDczVi4u"
@@ -84,66 +135,144 @@ Nuestras Hamburguesas
 
 </section>
 
-<!-- PRODUCTOS -->
-<div class="container py-5">
+<!-- CONTENEDOR PRODUCTOS -->
+<div class="container py-4" id="productos">
 
-<h2 class="text-center mb-5">
-Nuestras Hamburguesas
-</h2>
+<h1 class="text-center mb-4">
+HAMBURGUESAS "LA TOÑA"
+</h1>
 
-<div class="row g-4">
+<div class="row">
 
-<!-- CARD 1 -->
+<!-- Productos -->
+<div class="col-md-8">
+
+<div class="row g-3">
+
+<!-- Producto 1 -->
 <div class="col-md-4">
 
 <div class="card">
 
-<img src="https://picsum.photos/400/300?random=1">
+<img src="https://tiendacloud0jara.blob.core.windows.net/imagenesjaqueline/remolacha_hamburger.jpg"
+class="card-img-top"
+alt="Hamburguesa Betabel">
 
 <div class="card-body">
 
-<h5>Hamburguesa Especial</h5>
+<h5 class="card-title">
+Hamburguesa Betabel
+</h5>
 
-<button class="btn btn-success w-100">
-Comprar
+<button class="btn btn-success w-100"
+onclick="agregarProducto('Hamburguesa Betabel')">
+
+Agregar
+
 </button>
 
 </div>
 </div>
 </div>
 
-<!-- CARD 2 -->
+<!-- Producto 2 -->
 <div class="col-md-4">
 
 <div class="card">
 
-<img src="https://picsum.photos/400/300?random=2">
+<img src="https://tiendacloud0jara.blob.core.windows.net/imagenesjaqueline/shampoo2.jpg"
+class="card-img-top"
+alt="Shampoo Hidratante">
 
 <div class="card-body">
 
-<h5>Hamburguesa BBQ</h5>
+<h5 class="card-title">
+Shampoo Hidratante
+</h5>
 
-<button class="btn btn-success w-100">
-Comprar
+<button class="btn btn-success w-100"
+onclick="agregarProducto('Shampoo Hidratante')">
+
+Agregar
+
 </button>
 
 </div>
 </div>
 </div>
 
-<!-- CARD 3 -->
+<!-- Producto 3 -->
 <div class="col-md-4">
 
 <div class="card">
 
-<img src="https://picsum.photos/400/300?random=3">
+<img src="https://tiendacloud0jara.blob.core.windows.net/imagenesjaqueline/shampoo4.jpg"
+class="card-img-top"
+alt="Shampoo Nutritivo">
 
 <div class="card-body">
 
-<h5>Hamburguesa Doble</h5>
+<h5 class="card-title">
+Shampoo Nutritivo
+</h5>
 
-<button class="btn btn-success w-100">
-Comprar
+<button class="btn btn-success w-100"
+onclick="agregarProducto('Shampoo Nutritivo')">
+
+Agregar
+
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- Producto 4 -->
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="https://tiendacloud0jara.blob.core.windows.net/imagenesjaqueline/shampoo5.jpg"
+class="card-img-top"
+alt="Acondicionador">
+
+<div class="card-body">
+
+<h5 class="card-title">
+Acondicionador
+</h5>
+
+<button class="btn btn-success w-100"
+onclick="agregarProducto('Acondicionador')">
+
+Agregar
+
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- Producto 5 -->
+<div class="col-md-4">
+
+<div class="card">
+
+<img src="https://tiendacloud0jara.blob.core.windows.net/imagenesjaqueline/mike-PxJ9zkM2wdA-unsplash.jpg"
+class="card-img-top"
+alt="Hamburguesa Especial">
+
+<div class="card-body">
+
+<h5 class="card-title">
+Hamburguesa Especial
+</h5>
+
+<button class="btn btn-success w-100"
+onclick="agregarProducto('Hamburguesa Especial')">
+
+Agregar
+
 </button>
 
 </div>
@@ -151,24 +280,203 @@ Comprar
 </div>
 
 </div>
+</div>
+
+<!-- Carrito -->
+<div class="col-md-4">
+
+<div class="card">
+
+<div class="card-header bg-dark text-white">
+Carrito
+</div>
+
+<ul class="list-group list-group-flush"
+id="lista-carrito">
+
+<li class="list-group-item text-muted text-center">
+No hay productos
+</li>
+
+</ul>
+
+<div class="card-footer text-center">
+
+<button class="btn btn-danger"
+onclick="eliminarProducto()">
+
+Eliminar último producto
+
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- OFFCANVAS CARRITO -->
+<div class="offcanvas offcanvas-end"
+tabindex="-1"
+id="offcanvasCarrito">
+
+<div class="offcanvas-header">
+
+<h5 class="offcanvas-title">
+Tu Carrito
+</h5>
+
+<button type="button"
+class="btn-close"
+data-bs-dismiss="offcanvas">
+
+</button>
 
 </div>
 
-<footer>
+<div class="offcanvas-body">
 
-<h4>Hamburguesas La Toña</h4>
+<ul class="list-group"
+id="lista-carrito-offcanvas">
 
-<p>
-📍 Ciudad de México
+<li class="list-group-item text-muted text-center">
+No hay productos
+</li>
+
+</ul>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contacto" class="footer">
+
+<div class="footer-content">
+
+<address>
+
+<a href="https://maps.app.goo.gl/dNE5pY73eexW3Dqc8"
+target="_blank">
+
+Calle de Medellín, Ciudad de México
+
+</a>
+
+<br>
+
+Teléfono:
+<a href="tel:+525524709301">
++52 55 2470 9301
+</a>
+
+</address>
+
+<p class="copyright">
+© 2025 Restaurante Delicias
 </p>
 
-<p>
-📞 +52 55 2470 9301
-</p>
+<div class="social">
+
+<a href="#">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-linkedin"></i>
+</a>
+
+</div>
+
+</div>
 
 </footer>
 
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SCRIPT CARRITO -->
+<script>
+
+let carrito = [];
+
+function agregarProducto(producto){
+
+carrito.push(producto);
+
+actualizarCarrito();
+
+}
+
+function eliminarProducto(){
+
+if(carrito.length > 0){
+
+carrito.pop();
+
+actualizarCarrito();
+
+}
+
+}
+
+function actualizarCarrito(){
+
+const lista =
+document.getElementById("lista-carrito");
+
+const listaOffcanvas =
+document.getElementById("lista-carrito-offcanvas");
+
+const contador =
+document.getElementById("contador-carrito");
+
+lista.innerHTML = "";
+listaOffcanvas.innerHTML = "";
+
+if(carrito.length === 0){
+
+lista.innerHTML = `
+<li class="list-group-item text-muted text-center">
+No hay productos
+</li>
+`;
+
+listaOffcanvas.innerHTML = `
+<li class="list-group-item text-muted text-center">
+No hay productos
+</li>
+`;
+
+}else{
+
+carrito.forEach(producto => {
+
+lista.innerHTML += `
+<li class="list-group-item">
+${producto}
+</li>
+`;
+
+listaOffcanvas.innerHTML += `
+<li class="list-group-item">
+${producto}
+</li>
+`;
+
+});
+
+}
+
+contador.textContent = carrito.length;
+
+}
+
+</script>
 
 </body>
 </html>
